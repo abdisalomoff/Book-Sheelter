@@ -69,9 +69,9 @@ a:active {
 
 .containerr {
   width: 100%;
-  max-width: 1210px;
+  max-width: 1250px;
   margin: 0 auto;
-  padding: 0px 25px;
+  /* padding: 0px 25px; */
 }
 
 /* -------------------------- Header -------------------------- */
@@ -188,9 +188,9 @@ input::placeholder {
 }
 
 .hero-inner {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 
@@ -315,8 +315,8 @@ input::placeholder {
   display: flex;
   flex-wrap: wrap;
   padding: 40px 0px 40px 40px;
-  width: 70%;
-  height: 100%;
+  /* width: 70%;
+  height: 100%; */
   background-color: #e5e5e5;
   gap: 33px;
   margin: 0px;
@@ -355,8 +355,13 @@ input::placeholder {
   color: #757881;
 }
 
+/* .card__btsthree{
+  margin-top: auto;
+} */
+
 .card__btns {
   display: flex;
+  align-content: flex-end;
   flex-wrap: wrap;
   margin-top: auto;
   margin-top: 10px;
