@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Shelter</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="site-header__inner containerr">
+            <a class="site-header__logo" href="./index.html">
+                <img src="images/site-logo.svg" width="226" height="44" alt="Book Shelter" />
+            </a>
+
+            <form class="site-header__form" autocomplete="off">
+                <label class="site-header__label" for="search">
+                    <input class="site-header__input" type="text" id="search" name="search"
+                        placeholder="Search books" />
+                </label>
+            </form>
+
+            <a class="site-header__btn"><img src="./images/sun.svg" width="23" height="23" alt="darkmode" /></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="result">
+            <div class="result__inner containerr">
+                <h1 class="result__title">
+                    Showing <span class="result__search"> 0 </span> Result(s)
+                </h1>
+
+                <button class="newest__btn">Order by newest</button>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="hero-inner containerr">
+                <div class="bookmarks">
+                    <div class="bookmarks__heading">
+                        <h2 class="bookmarks__title">Bookmarks</h2>
+                        <p class="bookmarks__text">
+                            If you don’t like to read, you haven’t found the right book
+                        </p>
+                    </div>
+
+                    <ul class="bookmarks-wrapper">
+                        
+
+                    </ul>
+                </div>
+
+                <ul class="wrapper">
+                    
+                </ul>
+
+            </div>
+        </section>
+    </main>
+
+    <!---------------------------- TEMPLATE BOOKS------------------------->
+
+    <template id="bookstemp">
+        <li class="card">
+            <img class="card__img" src="./images/Rectangle.jpg" width="201" height="202" alt="images" />
+
+            <div class="card__body">
+                <h4 class="card__title">Python</h4>
+                <p class="card__by">David M. Beazley</p>
+                <span class="card__year">2009</span>
+                <div class="card__btns">
+                    <button class="btn-bookmark">Bookmark</button>
+                    <button class="btn-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">More Info</button>
+                </div>
+                <a target="_blank" class="btn-read">Read</a>
+            </div>
+        </li>
+    </template> 
+
+    <!---------------------------- TEMPLATE BOOKMARKS ------------------------>
+
+    <template id="bookmarkstemp" >
+        <li class="bookmarks-wrapper__item">
+            <div class="bookmarks-wrapper__content">
+                <h3 class="bookmarks-wrapper__title">Python</h3>
+                <p class="bookmarks-wrapper__by">David M. Beazley</p>
+            </div>
+    
+            <div class="bookmarks-wrapper__btns">
+                <a class="bookmark-btn" target="_blank"></a>
+                <button class="delete-btn"></button>
+            </div>
+        </li>
+    </template>
+
+    <!---------------------------- MODAL------------------------->
+
+
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header modal-heading__bg">
+          <h5 class="offcanvas-title modal-heading__title" id="offcanvasRightLabel">Offcanvas right</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+            <div id="modalTemp" class="offcanvas-body modalTemp">
+            <img class="modal-info__img" src="./images/phyton.jpg" alt="book" width="229" height="300" />
+            <p class="modal-info__text">
+                Culpa nulla pariatur cupidatat nisi incididunt ea do ipsum.
+                Incididunt quis mollit elit commodo cillum eiusmod reprehenderit
+                labore irure. Cillum et incididunt et nostrud exercitation quis aute
+                laboris non ut adipisicing. Laboris ad minim aute nulla proident
+                deserunt velit anim sunt aliquip ut sit. Exercitation aliquip
+                ullamco officia non aliqua. Sint deserunt aliquip veniam id eiusmod
+                sit consectetur mollit ea aliqua officia consequat. Magna non mollit
+                nisi est commodo voluptate aute id. Deserunt nostrud id do in nisi
+                mollit deserunt non. Pariatur fugiat cillum irure elit sint nisi ad
+                ipsum culpa deserunt cupidatat esse consequat laboris. Id aliquip
+                non consectetur esse proident duis Lorem.
+            </p>
+
+            <div class="modal-authors">
+                <div class="modal-authors-wrapper">
+                    <h5 class="modal-authors__title">Author:</h5>
+                    <div class="modal-link__wrapper">
+                        <span class="modal-link__btn modal-link__author">Jamal Kasper</span>
+                        <span class="modal-link__btn  modal-link__author">Author 2</span>
+                    </div>
+                </div>
+
+                <div class="modal-authors-wrapper">
+                    <p class="modal-authors__title">Published:</p>
+                    <div class="modal-link__wrapper">
+                        <span class="modal-link__btn modal-link__year">2019</span>
+                    </div>
+                </div>
+
+                <div class="modal-authors-wrapper">
+                    <p class="modal-authors__title">Publishers:</p>
+                    <div class="modal-link__wrapper">
+                        <span class="modal-link__btn modal-link__public">Hollman</span>
+                    </div>
+                </div>
+
+                <div class="modal-authors-wrapper">
+                    <p class="modal-authors__title">Categories:</p>
+                    <div class="modal-link__wrapper">
+                        <span class="modal-link__btn modal-link__category">Computers</span>
+                    </div>
+                </div>
+
+                <div class="modal-authors-wrapper">
+                    <p class="modal-authors__title">Pages Count:</p>
+                    <div class="modal-link__wrapper">
+                        <span class="modal-link__btn modal-link__pages">346</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-end">
+            <button class="modal-end__readbtn">Read</button>
+        </div>
+      </div>
+
+
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
